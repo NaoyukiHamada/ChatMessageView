@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.jfrog.bintray'
+//apply plugin: 'com.jfrog.bintray'
 apply plugin: "maven"
 apply plugin: 'com.github.dcendents.android-maven'
 
@@ -36,31 +36,31 @@ android {
     }
 }
 
-group = 'com.github.bassaer'
+//group = 'com.github.bassaer'
 version = rootProject.ext.versionName
 
 def siteUrl = 'https://github.com/bassaer/ChatMessageView'
 def gitUrl = 'https://github.com/bassaer/ChatMessageView.git'
 def issueUrl = 'https://github.com/bassaer/ChatMessageView/issues'
 
-bintray {
-    user = 'bassaer'
-    key = System.getenv('BINTRAY_API_KEY') // Travis ENV
-    publish = true
-    configurations = ['archives']
-    pkg {
-        repo = 'ChatMessageView'
-        name = project.name
-        userOrg = 'tnakayama'
-        desc = 'Chat UI Library for Android'
-        websiteUrl = siteUrl
-        issueTrackerUrl = issueUrl
-        vcsUrl = gitUrl
-        licenses = ['Apache-2.0']
-        labels = ['android']
-        publicDownloadNumbers = true
-    }
-}
+//bintray {
+//    user = 'bassaer'
+//    key = System.getenv('BINTRAY_API_KEY') // Travis ENV
+//    publish = true
+//    configurations = ['archives']
+//    pkg {
+//        repo = 'ChatMessageView'
+//        name = project.name
+//        userOrg = 'tnakayama'
+//        desc = 'Chat UI Library for Android'
+//        websiteUrl = siteUrl
+//        issueTrackerUrl = issueUrl
+//        vcsUrl = gitUrl
+//        licenses = ['Apache-2.0']
+//        labels = ['android']
+//        publicDownloadNumbers = true
+//    }
+//}
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -103,16 +103,16 @@ task findConventions doLast {
 
 def repo = new File(rootDir, "repository")
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository url: "file://${repo.absolutePath}"
-            pom.version = rootProject.ext.versionName
-            pom.groupId = 'com.github.bassaer'
-            pom.artifactId = 'chatmessageview'
-        }
-    }
-}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository url: "file://${repo.absolutePath}"
+//            pom.version = rootProject.ext.versionName
+//            pom.groupId = 'com.github.bassaer'
+//            pom.artifactId = 'chatmessageview'
+//        }
+//    }
+//}
 
 repositories {
     mavenCentral()
