@@ -20,7 +20,7 @@ import kotlin.collections.ArrayList
  * Simple chat view
  * Created by nakayama on 2016/08/08.
  */
-class MessageView : ListView, View.OnFocusChangeListener {
+open class MessageView : ListView, View.OnFocusChangeListener {
 
     /**
      * All contents such as right message, left message, date label

@@ -11,7 +11,7 @@ import java.util.*
  * Message object
  * Created by nakayama on 2016/08/08.
  */
-class Message {
+open class Message {
 
     /**
      * Sender information
